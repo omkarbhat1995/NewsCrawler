@@ -31,3 +31,31 @@ pip install pandas google beautifulsoup4 xlsxwriter
     * **Keyword Matching**: It checks every article against a list of comp_keywords to see if they belong to specific categories (e.g., Medical Security vs. General Security).
 
 4. **Export**: The final dataframe is saved to newsdb.csv and output.xlsx.
+
+--- 
+## 📂 Data Structure
+The output file contains the following columns:
+
+* **Links**: The URL of the scraped article.
+
+* **Text**: The extracted body content of the news story.
+
+* **Keywords (Multiple Columns)**: Boolean/Count flags for specific terms (e.g., 'hospital', 'FireEye', 'devices').
+
+* **Label**: A classification label for the news entry.
+---
+
+⚙️ Configuration
+You can customize the search by modifying the list_of_keywords variable at the top of the notebook:
+```python
+list_of_keywords = [
+    'medical+vulnerable+hack', 
+    'hospital+vulnerable+hack', 
+    'nhs+hack', 
+    'ransomware', 
+    'data breach'
+]
+```
+
+## ⚖️ Legal Disclaimer
+This tool is intended for educational and research purposes only. Users are responsible for ensuring that their scraping activities comply with the Terms of Service of the websites being accessed and the robots.txt files of the target domains.
